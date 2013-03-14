@@ -1,0 +1,6 @@
+= simple_form_for :session, url: session_path do |f|
+  .row
+    .span4
+      %h4= t(".social_networks")
+      = link_to 'Sign in via Github', sign_in_via_social_network_cpath(:github)
+

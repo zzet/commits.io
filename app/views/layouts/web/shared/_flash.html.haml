@@ -1,0 +1,5 @@
+- [:notice, :error, :success].each do |key|
+  - if flash && flash[key].present?
+    %div{ :class => "alert alert-#{key.to_s}" }
+      %a.close{'data-dismiss' => 'alert'}×
+      = flash[key]

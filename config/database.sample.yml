@@ -1,0 +1,28 @@
+setup: &setup
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *setup
+  database: commits_io_development
+  username: postgres
+  password:
+  pool: 5
+  timeout: 5000
+
+production:
+  <<: *setup
+  database: commits_io_production
+  username: commits_io_production
+  password:
+  pool: 5
+  timeout: 5000
+
+test:
+  <<: *setup
+  host: /var/run/postgresql
+  database: commits_io_test
+  username: postgres
+  password:
+  pool: 5
+  timeout: 5000
