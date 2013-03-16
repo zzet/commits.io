@@ -12,9 +12,11 @@ development:
 
 production:
   <<: *setup
-  database: commits_io_production
-  username: commits_io_production
+  database: commitsio_production
+  username: commitsio
   password:
+  host: 127.0.0.1
+  port: 5433
   pool: 5
   timeout: 5000
 
