@@ -23,13 +23,15 @@ CommitsIO::Application.routes.draw do
       get :authorization, :on => :member
     end
 
+    # private
     get '/dashboard' => 'users#dashboard'
     get '/profile' => 'users#profile'
-    get '/profiles/:login' => 'users#profile'
     get '/settings' => 'users/settings#repositories'
     get '/settings' => 'users/settings#personal'
 
+    # public
+    get '/profiles/:login' => 'users#profile'
     get '/:owner/:repository' => 'repositories#show', :constraints => RepositoryConstraint.new
-    get '/:owner/:repository/commits' => 'repositories#commits#index', :constraints => RepositoryConstraint.new
+    get '/:owner/:repository/commits' => 'repositories/commits#index', :constraints => RepositoryConstraint.new
   end
 end
