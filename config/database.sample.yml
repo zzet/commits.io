@@ -16,7 +16,6 @@ production:
   username: commits_io_production
   password:
   host: 127.0.0.1
-  port: 5433
   pool: 5
   timeout: 5000
 
