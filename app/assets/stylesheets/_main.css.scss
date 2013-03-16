@@ -56,6 +56,17 @@ header {
   }
 }
 
+.right {
+  text-align: right;
+}
+
+.b-dots {
+  padding-top: 40px;
+  height: 1px;
+  border-bottom: 1px dashed #999;
+  margin-bottom: 40px;
+}
+
 .hero {
   ul {
     font-size: 24px;
@@ -92,6 +103,47 @@ header {
         float: left;
         margin-right: 20px;
       }
+    }
+  }
+}
+
+.commit-block {
+  margin-bottom: 40px;
+  .item {
+    padding: 16px 0;
+    border-bottom: 1px solid #ccc;
+    .rate {
+      background-color: lighten($link-base-color, 5%);
+      width: 60px;
+      height: 60px;
+      @include border-radius(30px);
+      text-align: center;
+      line-height: 60px;
+      color: #fff;
+      font-family: Georgia;
+      font-size: 18px;
+      float: left;
+    }
+    .subcontent {
+      margin-left: 70px;
+    }
+    .summary {
+      line-height: 16px;
+      color: #666;
+    }
+    a.name {
+      color: #000;
+      font-size: 14px;
+      font-family: $github-font-family;
+      font-weight: bold;
+    }
+    a.author,
+    a.repo {
+      color: #666;
+    }
+    strong {
+      font-family: $github-font-family;
+      font-weight: bold !important;
     }
   }
 }
