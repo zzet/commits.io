@@ -8,7 +8,12 @@
       %li
         =link_to t(".Repositories"), settings_repositories_path
   .span9
-    %h2= t(".Repositories")
+    %h2
+      = t(".Repositories")
+      %span.pull-right
+        %i.icon-spinner.icon-spin
+        %span.btn.btn-success
+          = t(".sync")
 
     %table.table
       %tbody
