@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130316113121) do
+ActiveRecord::Schema.define(:version => 20130316130957) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20130316113121) do
     t.string   "ownerable_type"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "source"
   end
 
   create_table "user_auth_tokens", :force => true do |t|
