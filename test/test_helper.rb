@@ -20,7 +20,9 @@ class ActiveSupport::TestCase
   # fixtures :all
 
   require 'factory_girl'
+  require 'factory_girl_sequences'
   FactoryGirl.reload
+  FactoryGirlSequences.reload
 
   include FactoryGirl::Syntax::Methods
 end
