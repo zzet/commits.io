@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130192151) do
+ActiveRecord::Schema.define(:version => 20130316103509) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -19,6 +19,30 @@ ActiveRecord::Schema.define(:version => 20130130192151) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "badges", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "commit_metrics", :force => true do |t|
+    t.integer  "metric_id"
+    t.integer  "commit_id"
+    t.string   "data"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "metrics", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "user_auth_tokens", :force => true do |t|
@@ -29,15 +53,23 @@ ActiveRecord::Schema.define(:version => 20130130192151) do
     t.datetime "updated_at",           :null => false
   end
 
+  create_table "user_badges", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "badge_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password_digest"
-    t.string   "first_name"
+    t.string   "name"
     t.string   "image"
     t.date     "birthday"
     t.boolean  "admin"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "login"
   end
 
 end
