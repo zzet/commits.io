@@ -78,6 +78,8 @@ GEM
     configus (0.0.4)
       rake
     crack (0.3.2)
+    enumerize (0.5.1)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -282,6 +284,7 @@ DEPENDENCIES
   coffee-rails
   compass-rails
   configus
+  enumerize
   factory_girl_rails
   factory_girl_sequences
   ffi-aspell
