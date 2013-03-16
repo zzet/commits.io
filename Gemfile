@@ -40,11 +40,12 @@ group :production do
   gem 'newrelic_rpm'
 end
 
+gem 'factory_girl_rails'
+
 group :test do
   gem 'ci_reporter'
   gem 'minitest'
   gem 'simplecov', :require => false
-  gem 'factory_girl_rails'
   gem 'factory_girl_sequences'
   gem 'turn', :require => false
   gem 'tconsole', :require => false
