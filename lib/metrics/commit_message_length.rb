@@ -3,8 +3,8 @@ class Metrics::CommitMessageLength < Metrics::CommitMetric
     metrics << {
       metric: :commit_message_length,
       data: {
-        length:    @data[:message].length,
-        rate: rate(@data[:message].length)
+        length:    @data["message"].length,
+        rate: rate(@data["message"].length)
       }
     }
   end

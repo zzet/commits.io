@@ -1,6 +1,6 @@
 class Metrics::CommitMessageProfanity < Metrics::CommitMetric
   def calculate(metrics)
-    profanity = check @data[:message]
+    profanity = check @data["message"]
 
     metrics << {
       metric: :commit_message_profanity,

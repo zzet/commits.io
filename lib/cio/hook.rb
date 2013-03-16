@@ -11,7 +11,7 @@ class Cio::Hook
           data_to_metrics = {
             "source" => commit,
             "author" => commit["author"],
-            "committer" => commiter["committer"],
+            "committer" => committer["committer"],
             "message" => commit["message"],
             "sha" => commit["id"],
             #parent_sha: r,

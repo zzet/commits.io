@@ -14,3 +14,7 @@ repository.name = 'commits.io'
 repository.path = '/tmp'
 repository.ownerable = committer
 repository.save
+
+Metric.kind.values.each do |metric|
+  Metric.create name: metric.humanize, kind: metric
+end

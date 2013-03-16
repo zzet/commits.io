@@ -2,6 +2,6 @@ class CommitWorker
   @queue = :commit
 
   def self.perform(data)
-    # MetricCommittAnalise
+    CommitsService.add(data)
   end
 end

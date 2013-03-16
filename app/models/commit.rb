@@ -3,10 +3,11 @@ class Commit < ActiveRecord::Base
 
   has_many :commit_metrics, :dependent => :destroy
 
-  validates :commiter, presence: true
-  validates :repository, presence: true
+  belongs_to :committer
+  belongs_to :repository
 
-  validates :commiter, presence: true
+  validates :committer, presence: true
+  validates :repository, presence: true
   validates :sha, presence: true, length: { maximum: 255 }
   validates :parent_sha, presence: true, length: { maximum: 255 }
 end

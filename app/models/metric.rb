@@ -7,5 +7,5 @@ class Metric < ActiveRecord::Base
   has_many :commit_metrics, :dependent => :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
-  validates :kind, presence: true
+  validates :kind, presence: true, uniqueness: { case_sensitive: false }
 end

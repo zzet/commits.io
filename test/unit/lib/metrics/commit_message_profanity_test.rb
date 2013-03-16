@@ -3,7 +3,7 @@ require 'test_helper'
 class Metrics::CommitMessageProfanityTest < ActiveSupport::TestCase
   def test_could_calculate_metric
     data = generate :metrics_message
-    data[:message] = "Test fucking message wohooo!"
+    data["message"] = "Test fucking message wohooo!"
 
     metric = Metrics::CommitMessageProfanity.new data
     metrics = metric.calculate([])

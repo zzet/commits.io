@@ -5,6 +5,8 @@ class Repository < ActiveRecord::Base
   validates :path, length: { maximum: 255 }, if: -> { path.present? }
   validates :clone_url, length: { maximum: 255 }, presence: true
 
+  has_many :commits, :dependent => :destroy
+
   belongs_to :ownerable, polymorphic: true
   belongs_to :user
 end

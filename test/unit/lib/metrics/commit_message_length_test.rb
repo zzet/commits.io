@@ -3,7 +3,7 @@ require 'test_helper'
 class Metrics::CommitMessageLengthTest < ActiveSupport::TestCase
   def test_could_calculate_metric
     data = generate :metrics_message
-    data[:message] = "Test message"
+    data["message"] = "Test message"
 
     metric = Metrics::CommitMessageLength.new data
     metrics = metric.calculate([])
@@ -12,7 +12,7 @@ class Metrics::CommitMessageLengthTest < ActiveSupport::TestCase
 
   def test_rate
     data = generate :metrics_message
-    data[:message] = "Test message"
+    data["message"] = "Test message"
 
     metric = Metrics::CommitMessageLength.new data
 

@@ -3,7 +3,7 @@ require 'test_helper'
 class MetricsTest < ActiveSupport::TestCase
   def test_get_metrics_for_data
     data = generate :metrics_message
-    data[:message] = "Fucking test mssage with irrors. Yes"
+    data["message"] = "Fucking test mssage with irrors. Yes"
 
     metrics = Metrics.get_metrics_for data
 

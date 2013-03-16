@@ -8,4 +8,5 @@ class Committer < ActiveRecord::Base
   belongs_to :user
 
   has_many :repositories, :as => :ownerable
+  has_many :commit, :dependent => :destroy
 end
