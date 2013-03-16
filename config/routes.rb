@@ -24,6 +24,7 @@ CommitsIO::Application.routes.draw do
     scope :module => :users do
       namespace :settings do
         post :activate_repository
+        put :update_personal
       end
     end
 

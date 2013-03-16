@@ -21,5 +21,16 @@ class Web::Users::SettingsController < Web::Users::ApplicationController
   end
 
   def personal
+    @user = resource_user
+  end
+
+  def update_personal
+    @user = resource_user
+
+    unless @user.update_attributes(params[:user])
+      flash_error
+    end
+
+    render action: :personal
   end
 end
