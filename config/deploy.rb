@@ -19,7 +19,7 @@ set :asset_env,      "RAILS_GROUPS=assets RAILS_RELATIVE_URL_ROOT=#{mount_point.
 #set :sidekiq_pid, "#{current_path}/tmp/pids/sidekiq.pid"
 #set :sidekiq_processes, 1
 
-set :application, "commitsio"
+set :application, "commits.io"
 set :rvm_type, :system
 
 set :scm, :git
@@ -50,7 +50,6 @@ end
 
 before 'deploy:finalize_update',
   'deploy:symlink_db',
-  'deploy:symlink_commitsio',
   'deploy:symlink_resque',
   'deploy:symlink_unicorn'
 after "deploy:restart", "unicorn:stop"
