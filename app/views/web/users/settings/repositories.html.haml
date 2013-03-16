@@ -1,8 +1,29 @@
-.row
+.row-fluid
   .span3
     %ul.nav.nav-list
       %li
-        %a Repositiories
+        =link_to t(".Profile"), profile_path
       %li
-        %a Profile
+        =link_to t(".Settings"), settings_personal_path
+      %li
+        =link_to t(".Repositories"), settings_repositories_path
   .span9
+    %h2= t(".Repositories")
+
+    %table.table
+      %tbody
+        %tr
+          %td
+            zzet/commits.io
+          %td
+            
+        %tr
+          %td
+            Andrew8xx8/awesome-cropper
+          %td
+            
+        %tr
+          %td
+            zzet/commits.io
+          %td
+            
