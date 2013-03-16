@@ -1,4 +1,9 @@
+html,
+body {
+	height: 100%;
+}
 body {
 	font-size: $base-font-size;
 	font-family: $base-font-family;
+	@include sticky-footer(54px, ".main", ".main-footer", ".footer")
 }
