@@ -54,6 +54,25 @@ header {
       }
     }
   }
+  .btn-enter-wrap {
+    text-align: center;
+    .btn-enter {
+      padding: 20px 30px;
+      font-size: 24px;
+      .btn-text {
+        font-size: 24px;
+        line-height: 40px;
+        .github {
+          font-weight: bold;
+          font-size: 36px;
+        }
+      }
+      i {
+        float: left;
+        margin-right: 20px;
+      }
+    }
+  }
 }
 
 .footer {
