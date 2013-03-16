@@ -11,4 +11,8 @@ class Metrics
     metrics
   end
 
+  def self.get_presenter(commit_metric)
+    klass = "Metrics::Presenter::#{metric_name.camelize}".constantize
+    klass.new commit_metric
+  end
 end

@@ -7,4 +7,12 @@ class CommitMetric < ActiveRecord::Base
   validates :commit, presence: true
   validates :data, presence: true
   validates :metric, presence: true
+
+  def percent
+    presenter.percent
+  end
+
+  def presenter
+    @presenter ||= CommitsService.get_presenter(self)
+  end
 end
