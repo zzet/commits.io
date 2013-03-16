@@ -1,2 +1,2 @@
-class Web::DashboardControllerController < ApplicationController
+class Web::DashboardControllerController < Web::ApplicationController
 end
