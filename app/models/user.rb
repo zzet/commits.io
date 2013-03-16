@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: { case_sensitive: false }
   validates :login, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }, allow_blank: true
-  validates :name, presence: true, length: { maximum: 255 }
+  validates :name, length: { maximum: 255 }
 
   def guest?
     false
