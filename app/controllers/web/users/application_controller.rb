@@ -1,4 +1,4 @@
-class Web::Users::ApplicationController < Web::ApplicationController
+class Web::Users::ApplicationController < Web::ProtectedApplicationController
 
   def resource_user
     current_user

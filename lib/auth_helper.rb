@@ -32,6 +32,12 @@ module AuthHelper
     !current_user.guest?
   end
 
+  def authenticate!
+    unless signed_in?
+      redirect_to root_path
+    end
+  end
+
   def api_authenticate!
     raise ApiAuthException unless current_user.admin?
   end
