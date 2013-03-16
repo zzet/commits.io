@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :auth_tokens
   has_many :authorizations
+  has_many :user_badges, :dependent => :destroy
 
   attr_accessible :email, :first_name, :image, :password, :password_confirmation
 
