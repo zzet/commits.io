@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  attr_accessible :email, :name, :login, :image, :password, :password_confirmation
+  attr_accessible :email, :name, :login, :image, :password, :password_confirmation, :birthday
 
   validates :email, uniqueness: { case_sensitive: false }
   validates :login, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
