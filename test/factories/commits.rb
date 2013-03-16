@@ -2,10 +2,11 @@
 
 FactoryGirl.define do
   factory :commit do
-    sha "MyString"
-    parent_sha "MyString"
+    sha { generate(:string) }
+    parent_sha { generate(:string) }
     repository { create :repository_owned_by_organization }
     committer
-    diff "MyText"
+    diff { generate(:string) }
+    message { generate(:string) }
   end
 end
