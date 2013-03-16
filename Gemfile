@@ -16,6 +16,7 @@ gem 'resque'
 gem 'resque-scheduler'
 gem 'github_api'
 gem 'ffi-aspell'
+gem 'obscenity'
 
 # Gems used only for assets and not required
 # in production environments by default.
