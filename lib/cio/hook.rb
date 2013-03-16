@@ -2,7 +2,7 @@ class Cio::Hook
   class << self
     def process(post_data)
       post_repo = post_data["repository"]
-      repository = Repository.find_by external_id: post_repo["id"], external_type: :github
+      repository = Repository.find_by_external_id_and_external_type(post_repo["id"], :github)
       if repository
         repo_path = "#{configus.system.repositories.path}/#{post_repo["owner"]["name"]}/#{post_repo["name"]}.git"
         r = Grit::Repo.new(repo_path)
@@ -31,6 +31,8 @@ class Cio::Hook
 
           Resque.enqueue_to :commit_data, CommitWorker, data_to_metrics
         end
+      else
+        raise RuntimeError, "Repository not exist!"
       end
     end
   end

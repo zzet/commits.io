@@ -8,4 +8,9 @@ module TestSupport
     @request.env['RAW_POST_DATA'] = data
   end
 
+  def fixture_file_upload(path, mime_type = nil, binary = false)
+    fixture_path = Rails.root.join('test', 'fixtures')
+    Rack::Test::UploadedFile.new("#{fixture_path}/#{path}", mime_type, binary)
+  end
+
 end
