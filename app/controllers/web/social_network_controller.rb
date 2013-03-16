@@ -4,7 +4,8 @@ class Web::SocialNetworkController < Web::ApplicationController
     authorization = Authorization.find_by_provider_and_uid(auth_hash[:provider], auth_hash[:uid])
 
     if authorization
-      sign_in authorization.user
+      sign_in(authorization.user)
+      save_auth_token(auth_hash[:credentials][:token])
       flash_success
     else
       user = User.find_or_initialize_by_login(auth_hash[:extra][:raw_info][:login])
@@ -17,6 +18,7 @@ class Web::SocialNetworkController < Web::ApplicationController
 
       if user.save
         sign_in user
+        save_auth_token(auth_hash[:credentials][:token])
         flash_success
       else
         flash_error

@@ -8,6 +8,7 @@ require 'rails/test_help'
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each {|f| require f}
 Dir[Rails.root.join("test/lib/*.rb")].each {|f| require f}
 require 'mocha/setup'
+require 'webmock/minitest'
 
 class ActiveSupport::TestCase
   include AuthHelper

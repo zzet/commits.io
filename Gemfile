@@ -14,6 +14,7 @@ gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'state_machine'
 gem 'resque'
 gem 'resque-scheduler'
+gem 'github_api'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -54,4 +55,5 @@ group :test do
   gem 'turn', :require => false
   gem 'tconsole', :require => false
   gem 'mocha', :require => false
+  gem 'webmock', :require => false
 end
