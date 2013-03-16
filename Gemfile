@@ -15,6 +15,7 @@ gem 'state_machine'
 gem 'resque'
 gem 'resque-scheduler'
 gem 'github_api'
+gem 'ffi-aspell'
 
 # Gems used only for assets and not required
 # in production environments by default.
