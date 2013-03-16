@@ -4,8 +4,24 @@ class Metrics::CommitMessageLength < Metrics::Metric
       metric: :commit_message_length,
       data: {
         length:    @data[:message].length,
-        rate: (80 / @data[:message].length).to_f
+        rate: rate(@data[:message].length)
       }
     }
+  end
+
+  def rate(length)
+    if length < 20
+      length.to_f / 20
+    else
+      if length > 80
+        if length <200 
+          (280 - length).to_f / 200
+        else
+          0
+        end
+      else
+        1.0
+      end
+    end
   end
 end
