@@ -11,7 +11,7 @@
         %span 3
         Track you repo commits
   .span4.btn-enter-wrap
-    %a.btn.btn-success.btn-enter
+    = link_to sign_in_via_social_network_cpath(:github), {class: "btn btn-success btn-enter"} do
       %i.icon-github.icon-4x
       %span.btn-text
         Sign in via

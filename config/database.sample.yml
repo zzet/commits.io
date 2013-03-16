@@ -12,8 +12,8 @@ development:
 
 production:
   <<: *setup
-  database: commitsio_production
-  username: commitsio
+  database: commits_io_production
+  username: commits_io_production
   password:
   host: 127.0.0.1
   port: 5433
