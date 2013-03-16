@@ -26,8 +26,4 @@ class Metrics::CommitMessageSyntax < Metrics::Metric
       wrong: wrong_words
     }
   end
-
-  def split_words(text)
-    text.scan(/\w+/)
-  end
 end
