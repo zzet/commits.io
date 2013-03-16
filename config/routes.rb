@@ -7,10 +7,6 @@ class RepositoryConstraint
 end
 
 CommitsIO::Application.routes.draw do
-  get "settings/repositories"
-
-  get "settings/personal"
-
   # omniauth-github
   get '/auth/github/callback' => 'web/social_network#authorization'
   get '/auth/github/failure' => 'web/social_network#failure'
@@ -26,8 +22,8 @@ CommitsIO::Application.routes.draw do
     # private
     get '/dashboard' => 'users#dashboard'
     get '/profile' => 'users#profile'
-    get '/settings' => 'users/settings#repositories'
-    get '/settings' => 'users/settings#personal'
+    get '/settings/repositories' => 'users/settings#repositories'
+    get '/settings/personal' => 'users/settings#personal'
 
     # public
     get '/profiles/:login' => 'users#profile'
