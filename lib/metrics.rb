@@ -3,11 +3,12 @@ class Metrics
     metrics = []
 
     ::Metric.kind.values.each do |metric_name|
-      klass = "Metrics::#{metric_name.camelize}".constantize
+      klass = "Metrics::Builder::#{metric_name.camelize}".constantize
       metric = klass.new (data)
-      metrics = metric.calculate metrics
+      metrics << metric.calculate
     end
 
     metrics
   end
+
 end

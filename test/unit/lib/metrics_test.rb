@@ -8,9 +8,9 @@ class MetricsTest < ActiveSupport::TestCase
     metrics = Metrics.get_metrics_for data
 
     assert_equal metrics, [
-      {:metric=>:commit_message_syntax, :data=>{:words=>["Fucking", "test", "mssage", "with", "irrors", "Yes"], :wrong_words=>["mssage", "irrors"], :rate=>0.6666666666666667}}, 
-      {:metric=>:commit_message_profanity, :data=>{:words=>["Fucking", "test", "mssage", "with", "irrors", "Yes"], :wrong_words=>["fucking"], :rate=>0.8333333333333334}}, 
-      {:metric=>:commit_message_length, :data=>{:length=>36, :rate=>1.0}}
+      {:metric=>:message_syntax, :data=>{:words=>["Fucking", "test", "mssage", "with", "irrors", "Yes"], :wrong_words=>["mssage", "irrors"], :rate=>0.6666666666666667}}, 
+      {:metric=>:message_profanity, :data=>{:words=>["Fucking", "test", "mssage", "with", "irrors", "Yes"], :wrong_words=>["fucking"], :rate=>0.8333333333333334}}, 
+      {:metric=>:message_length, :data=>{:length=>36, :rate=>1.0}}
     ]
   end
 
