@@ -23,10 +23,10 @@ set :application, "commitsio"
 set :rvm_type, :system
 
 set :scm, :git
-set :repository, "git://github.com/zzet/commitsio.git"
+set :repository, "git@github.com:zzet/commits.io.git"
 
 set :use_sudo, false
-set :ssh_options, :forward_agent => true
+set :ssh_options, forward_agent: true
 default_run_options[:pty] = true
 
 namespace :deploy do
