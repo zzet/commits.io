@@ -4,6 +4,7 @@ FactoryGirl.define do
       :provider => 'github',
       :uid => '1234567',
       :info => {
+        email: "test@test.test",
         nickname: "8xx8ru",
         name: "8xx8 [18+]",
         location:"Simbirsk",

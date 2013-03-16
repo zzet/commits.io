@@ -20,7 +20,7 @@ class Web::SocialNetworkControllerTest < ActionController::TestCase
   end
 
   test "should get authorization with github on existing user" do
-    @user.email = @auth_hash[:info][:nickname] 
+    @user.email = @auth_hash[:info][:email] 
     @user.save
 
     request.env['omniauth.auth'] = @auth_hash
@@ -36,7 +36,7 @@ class Web::SocialNetworkControllerTest < ActionController::TestCase
     request.env['omniauth.auth'] = @auth_hash
     get :authorization
 
-    assert User.find_by_email(auth_hash[:info][:nickname])
+    assert User.find_by_email(auth_hash[:info][:email])
     assert signed_in?
     assert current_user.authorizations
     assert_response :redirect
