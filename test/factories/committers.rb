@@ -11,5 +11,9 @@ FactoryGirl.define do
       user
       email { |c| c.user.email }
     end
+
+    after(:create) do |c|
+      create :repository_owned_by_committer, ownerable: c
+    end
   end
 end

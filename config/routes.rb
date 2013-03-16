@@ -1,10 +1,8 @@
 class RepositoryConstraint
   def matches?(request)
-    (
-      Committer.exists? login: requests.params[:owner]
-      || Organization.exists? name: requests.params[:owner]
-    )
-    && Repository.exists? name: requests.params[:repository]
+    (Committer.exists?(login: request.params[:owner]) || 
+     Organization.exists?(name: request.params[:owner])) && 
+      Repository.exists?(name: request.params[:repository])
   end
 end
 
