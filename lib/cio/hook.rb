@@ -9,21 +9,21 @@ class Cio::Hook
         commits = post_data["commits"]
         commits.each do |commit|
           data_to_metrics = {
-            "source": commit,
-            "author": commit["author"],
-            "committer": commiter["committer"],
-            "message": commit["message"],
-            "sha": commit["id"],
+            "source" => commit,
+            "author" => commit["author"],
+            "committer" => commiter["committer"],
+            "message" => commit["message"],
+            "sha" => commit["id"],
             #parent_sha: r,
             #ref: r,
-            "files": {
-              "added": commit["added"],
-              "modified": commit["modified"],
-              "removed": commit["removed"]
+            "files" => {
+              "added" => commit["added"],
+              "modified" => commit["modified"],
+              "removed" => commit["removed"]
             },
-            "diffs": [ ],
-            "timestamp": commit["timestamp"],
-            "repository_id": repository.id
+            "diffs" => [ ],
+            "timestamp" => commit["timestamp"],
+            "repository_id" => repository.id
           }
           diffs = Grit::Commit.diff(r, commit["id"])
           diffs.each_with_index do |i, diff|
