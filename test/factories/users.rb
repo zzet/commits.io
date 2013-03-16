@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :user do
     email
+    name
+    login { generate :string }
     password { generate :string }
-    name { generate :name }
     image { generate :name }
 
     trait :admin do

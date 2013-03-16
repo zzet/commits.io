@@ -7,7 +7,7 @@ class Web::SocialNetworkController < Web::ApplicationController
       sign_in authorization.user
       flash_success
     else
-      user = User.find_or_initialize_by_email(auth_hash[:info][:nickname])
+      user = User.find_or_initialize_by_email(auth_hash[:info][:email])
 
       if user.new_record?
         user = UserPopulator.via_github(user, auth_hash)

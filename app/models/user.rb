@@ -5,9 +5,10 @@ class User < ActiveRecord::Base
   has_many :authorizations
   has_many :user_badges, :dependent => :destroy
 
-  attr_accessible :email, :name, :image, :password, :password_confirmation
+  attr_accessible :email, :name, :login, :image, :password, :password_confirmation
 
   validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :login, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }, allow_blank: true
   validates :name, presence: true, length: { maximum: 255 }
 
