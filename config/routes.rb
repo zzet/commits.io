@@ -19,6 +19,8 @@ CommitsIO::Application.routes.draw do
       get :authorization, :on => :member
     end
 
+    resource :hook, only: :create
+
     # private
     get '/dashboard' => 'users#dashboard'
     get '/profile' => 'users#profile'
