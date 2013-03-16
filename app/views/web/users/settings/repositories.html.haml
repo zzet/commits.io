@@ -21,7 +21,7 @@
       - @repositories.each do |r|
         %tr
           %td= r.name
-          %td
+          %td.right
             - unless r.id?
               = button_to t('.activate'), settings_activate_repository_path(repository: r.name), method: :post, class: 'btn'
             - else
