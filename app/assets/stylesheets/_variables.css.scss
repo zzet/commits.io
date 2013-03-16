@@ -2,3 +2,12 @@
 $base-font-size: 13px;
 $base-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 $slave-font-family: 'Lobster', cursive;
+
+// Colors
+$link-base-color: #0088cc;
+
+// CSS3 Transitions
+$default-transition-property: all;
+$default-transition-duration: 0.5s;
+$default-transition-function: ease;
+$default-transition-delay: 0;

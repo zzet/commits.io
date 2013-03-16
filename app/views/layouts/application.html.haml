@@ -4,14 +4,16 @@
     = render 'layouts/web/shared/head'
   %body
     .main
-      .container
-        %header
-          %h1
-            = link_to t('commits_io'), root_path, class: 'brand'
-          %h2
-            Show that you are the best in commiting!
-          = render 'layouts/web/shared/menu'
-        %article{role: "main"}
+      %header
+        .container-fluid
+          .row
+            .span12
+              %h1
+                = link_to t('commits_io'), root_path, class: 'brand'
+              %p
+                Show that you are the best in commiting!
+      .content
+        .container-fluid
           = render :partial => 'layouts/web/shared/flash', :object => flash
           = yield
       .main-footer
