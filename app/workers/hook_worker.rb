@@ -2,6 +2,6 @@ class HookWorker
   @queue = :hook
 
   def self.perform(data)
-    p data
+    Cio::Hook.process data
   end
 end
