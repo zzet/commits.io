@@ -18,21 +18,21 @@ gem 'resque-scheduler'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem "less-rails"
+  gem 'less-rails'
   gem 'jquery-ui-rails'
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'therubyracer', '0.10.2', :platform => :ruby
   gem 'libv8', '~> 3.3.10'
   gem 'uglifier', '>= 1.0.3'
-  gem "twitter-bootstrap-rails"
+  gem 'twitter-bootstrap-rails'
   gem 'compass-rails'
 end
 
 gem 'jquery-rails'
 
 group :development do
-  gem "better_errors"
+  gem 'better_errors'
   gem 'capi', '0.1.1'
   gem 'capistrano', '2.13.5'
   gem 'rvm-capistrano', '1.2.7'
@@ -53,4 +53,5 @@ group :test do
   gem 'factory_girl_sequences'
   gem 'turn', :require => false
   gem 'tconsole', :require => false
+  gem 'mocha', :require => false
 end
