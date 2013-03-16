@@ -3,14 +3,16 @@
   %head
     = render 'layouts/web/shared/head'
   %body
-    .container
-      %header
-        %h1
-          = link_to t('commits_io'), root_path, class: 'brand'
-        %h2
-          Show that you are the best in commiting!
-        = render 'layouts/web/shared/menu'
-      %article{role: "main"}
-        = render :partial => 'layouts/web/shared/flash', :object => flash
-        = yield
+    .main
+      .container
+        %header
+          %h1
+            = link_to t('commits_io'), root_path, class: 'brand'
+          %h2
+            Show that you are the best in commiting!
+          = render 'layouts/web/shared/menu'
+        %article{role: "main"}
+          = render :partial => 'layouts/web/shared/flash', :object => flash
+          = yield
+    .footer
       = render :partial => 'layouts/web/shared/footer'
