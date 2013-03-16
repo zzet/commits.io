@@ -21,6 +21,6 @@
           %td= r.name
           %td.right
             - unless r.id?
-              = button_to t('.activate'), settings_activate_repository_path(repository: r.name), method: :post, class: 'btn'
+              = link_to t('.activate'), settings_activate_repository_path(repository: r.name), method: :post
             - else
               = t('.activated')
