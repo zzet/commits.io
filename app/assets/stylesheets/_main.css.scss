@@ -16,7 +16,7 @@ header {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
-  background-color: #fcfcfc;
+  background-color: #f9f9f9;
   @include single-box-shadow(darken(#fff, 5%), 0, -4px, 8px, 0, inset);
   h1 {
     font-size: 72px;
@@ -33,4 +33,10 @@ header {
     font-size: 24px;
     font-style: italic;
   }
+}
+
+.footer {
+  background-color: #f9f9f9;
+  @include single-box-shadow(darken(#fff, 5%), 0, 4px, 8px, 0, inset);
+  line-height: 54px;
 }
