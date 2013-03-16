@@ -35,6 +35,27 @@ header {
   }
 }
 
+.hero {
+  padding-top: 60px;
+  ul {
+    font-size: 24px;
+    li {
+      margin-bottom: 24px;
+      span {
+        display: inline-block;
+        background-color: #ccc;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        text-align: center;
+        margin-right: 10px;
+        @include border-radius(20px);
+      }
+    }
+  }
+}
+
 .footer {
   background-color: #f9f9f9;
   @include single-box-shadow(darken(#fff, 5%), 0, 4px, 8px, 0, inset);
