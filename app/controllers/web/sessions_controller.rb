@@ -13,12 +13,12 @@ class Web::SessionsController < Web::ApplicationController
       end
     else
       flash_error
-      render action: :new
+      redirect_to root_path
     end
   end
 
   def destroy
     sign_out
-    redirect_to action: :new
+    redirect_to root_path
   end
 end
