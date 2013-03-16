@@ -1,12 +1,9 @@
-%nav.row
-  - if signed_in?
-    %h2.span9
-      %i.icon-user
-      = current_user.name
-
-  %ul.span3.pull-right
-    - if signed_in?
-      %li= link_to t('.sign_out'), session_path, method: :delete
-    - else
-      %li{class: "#{'active' if current_page?(new_session_path)}"}
-        = link_to 'Sin in via Github', sign_in_via_social_network_cpath(:github)
+.navbar.navbar-custom
+  .navbar-inner
+    %ul.nav.pull-right
+      %li
+        =link_to t(".Profile"), settings_repositories_path
+      %li
+        =link_to t(".Settings"), settings_personal_path
+      %li
+        = link_to t('.sign_out'), session_path, method: :delete

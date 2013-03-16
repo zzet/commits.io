@@ -4,6 +4,8 @@
     = render 'layouts/web/shared/head'
   %body
     .main
+      - if signed_in?
+        = render :partial => 'layouts/web/shared/menu'
       %header
         .container-fluid
           .row

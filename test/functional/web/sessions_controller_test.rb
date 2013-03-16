@@ -15,7 +15,7 @@ class Web::SessionsControllerTest < ActionController::TestCase
   test "should not authenticate" do
     attrs = { email: @user.email, password: 'wrong_password' }
     post :create, session: attrs
-    assert_response :success
+    assert_redirected_to root_path
     assert !signed_in?
   end
 
@@ -27,7 +27,7 @@ class Web::SessionsControllerTest < ActionController::TestCase
   test "should delete destroy" do
     sign_in @user
     delete :destroy
-    assert_response :redirect
+    assert_redirected_to root_path
     assert !signed_in?
   end
 end
