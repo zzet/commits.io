@@ -5,7 +5,7 @@ set :default_stage, "staging"
 
 set :db_adapter,     'postgres'
 set :mount_point,    '/'
-set :application,    'commitsio'
+set :application,    'commits.io'
 set :user,           'git'
 set :rails_env,      'production'
 set :deploy_to,      "/home/#{user}/apps/#{application}"
