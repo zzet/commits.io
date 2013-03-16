@@ -7,7 +7,7 @@ class CommitsService
       commit_metrics = Metrics.get_metrics_for data
 
       commit_metrics.each do |commit_metric|
-        create_commit_metric(commit_metric, data)
+        create_commit_metric(commit, commit_metric, data)
       end
     end
 
