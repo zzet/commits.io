@@ -10,10 +10,10 @@ require 'capistrano/maintenance'
 require 'capi/unicorn'
 
 # Maintance sidekiq with cap
-require 'sidekiq/capistrano'
+#require 'sidekiq/capistrano'
 
 # Uncomment if you will use Airbrake notifications
-require 'airbrake/capistrano'
+#require 'airbrake/capistrano'
 
 Dir['vendor/gems/*/recipes/*.rb','vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 

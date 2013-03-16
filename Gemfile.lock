@@ -53,6 +53,8 @@ GEM
       net-ssh-gateway (>= 1.1.0)
     capistrano-ext (1.2.1)
       capistrano (>= 1.0.0)
+    capistrano-maintenance (0.0.2)
+      capistrano (>= 2.0.0)
     chattyproc (1.0.0)
     ci_reporter (1.8.4)
       builder (>= 2.1.2)
@@ -226,6 +228,7 @@ DEPENDENCIES
   capi (= 0.1.1)
   capistrano (= 2.13.5)
   capistrano-ext
+  capistrano-maintenance
   ci_reporter
   coffee-rails
   configus
