@@ -1,39 +1,17 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-
 gem 'pg'
-gem 'pg_search'
-
 gem 'unicorn'
-gem 'yahoo_quote'
-
 gem 'jbuilder'
-
 gem 'haml-rails'
 gem 'simple_form'
-gem "redcarpet"
-
 gem 'validates'
-gem 'carrierwave'
-gem 'kaminari'
-gem 'ransack'
-
 gem 'configus'
-
-#gem 'backup'
-gem 'whenever', :require => false
-
 gem 'bcrypt-ruby'
-gem 'enumerize'
-gem 'unicode_utils'
-
 gem 'omniauth'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
-
 gem 'state_machine'
-
-gem 'gon'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -49,16 +27,13 @@ group :assets do
 end
 
 gem 'jquery-rails'
-#gem "yandex_metrika", "~> 0.0.2"
 
 group :development do
   gem "better_errors"
-  gem "binding_of_caller"
   gem 'capi', '0.1.1'
   gem 'capistrano', '2.13.5'
   gem 'rvm-capistrano', '1.2.7'
   gem 'capistrano-ext'
-  gem 'capistrano_colors'
 end
 
 group :production do
@@ -73,5 +48,4 @@ group :test do
   gem 'factory_girl_sequences'
   gem 'turn', :require => false
   gem 'tconsole', :require => false
-  gem 'webmock', :require => 'webmock/minitest'
 end

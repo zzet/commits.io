@@ -1,5 +1,4 @@
 require 'simplecov'
-require 'webmock/minitest'
 
 SimpleCov.start('rails') if ENV["COVERAGE"]
 
