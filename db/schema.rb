@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130316111416) do
+ActiveRecord::Schema.define(:version => 20130316113121) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(:version => 20130316111416) do
     t.text     "diff"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "committers", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "organization_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "metrics", :force => true do |t|
