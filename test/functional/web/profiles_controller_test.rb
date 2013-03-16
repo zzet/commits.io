@@ -1,7 +1,15 @@
 require 'test_helper'
 
 class Web::ProfilesControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  def setup
+    @user = create(:user)
+    @params = { login: @user.id }
+  end
+
+  test "should get show" do
+    get :show, @params
+
+    assert_response :success
+  end
 end

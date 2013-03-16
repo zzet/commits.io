@@ -16,19 +16,13 @@ CommitsIO::Application.routes.draw do
     resources :users, only: [:new, :create] 
     resource :session, only: [:new, :create, :destroy]
 
-    resources :profiles, only: [:show]
-
-    resource :user, only: [:new, :create] do
-      member do
-        put :subscribe_course
-        put :unscribe_course
-      end
-    end
+    resource :user, only: [:new, :create]
 
     resource :social_network, :only => [] do 
       get :authorization, :on => :member
     end
 
+    get '/profiles/:login' => 'profiles#show'
     get '/:owner/:repository' => 'repositories#show', :constraints => RepositoryConstraint.new
     get '/:owner/:repository/commits' => 'repositories#commits#index', :constraints => RepositoryConstraint.new
   end
