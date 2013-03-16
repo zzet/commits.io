@@ -13,10 +13,7 @@ CommitsIO::Application.routes.draw do
 
   scope :module => :web do
     root :to => 'welcome#show'
-    resources :users, only: [:new, :create] 
     resource :session, only: [:new, :create, :destroy]
-
-    resource :user, only: [:new, :create]
 
     resource :social_network, :only => [] do 
       get :authorization, :on => :member
