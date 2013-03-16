@@ -1,7 +1,6 @@
 class Metrics::CommitMessageSyntax < Metrics::Metric
   def calculate(metrics)
-
-    spelling = check @data[:data][:message]
+    spelling = check @data[:message]
 
     metrics << {
       metric: :commit_message_syntax,

@@ -3,7 +3,7 @@ require 'test_helper'
 class Metrics::CommitMessageSyntaxTest < ActiveSupport::TestCase
   def test_could_calculate_metric
     data = generate :metrics_message
-    data[:data][:message] = "Test mssage with irrors. Yes"
+    data[:message] = "Test mssage with irrors. Yes"
 
     metric = Metrics::CommitMessageSyntax.new data
     metrics = metric.calculate([])
