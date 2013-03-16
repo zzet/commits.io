@@ -1,4 +1,4 @@
-class Metrics::Metric
+class Metrics::CommitMetric
   def initialize(data)
     @data = data
   end

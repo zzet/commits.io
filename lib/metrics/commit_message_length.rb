@@ -1,4 +1,4 @@
-class Metrics::CommitMessageLength < Metrics::Metric
+class Metrics::CommitMessageLength < Metrics::CommitMetric
   def calculate(metrics)
     metrics << {
       metric: :commit_message_length,

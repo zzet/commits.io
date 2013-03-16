@@ -1,4 +1,4 @@
-class Metrics::CommitMessageProfanity < Metrics::Metric
+class Metrics::CommitMessageProfanity < Metrics::CommitMetric
   def calculate(metrics)
     profanity = check @data[:message]
 

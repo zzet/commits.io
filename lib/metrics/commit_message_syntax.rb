@@ -1,4 +1,4 @@
-class Metrics::CommitMessageSyntax < Metrics::Metric
+class Metrics::CommitMessageSyntax < Metrics::CommitMetric
   def calculate(metrics)
     spelling = check @data[:message]
 
