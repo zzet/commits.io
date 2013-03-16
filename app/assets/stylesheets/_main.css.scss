@@ -146,6 +146,11 @@ header {
       font-weight: bold !important;
     }
   }
+  &.worse {
+    .rate {
+      background-color: #bbb;
+    }
+  }
 }
 
 .footer {
