@@ -56,6 +56,7 @@ GEM
     capistrano-maintenance (0.0.2)
       capistrano (>= 2.0.0)
     chattyproc (1.0.0)
+    chunky_png (1.2.7)
     ci_reporter (1.8.4)
       builder (>= 2.1.2)
     coderay (1.0.9)
@@ -67,6 +68,12 @@ GEM
       execjs
     coffee-script-source (1.6.1)
     commonjs (0.2.6)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
     configus (0.0.4)
       rake
     erubis (2.7.0)
@@ -82,6 +89,7 @@ GEM
       factory_girl (~> 4.0)
     faraday (0.8.6)
       multipart-post (~> 1.1)
+    fssm (0.2.10)
     haml (4.0.0)
       tilt
     haml-rails (0.4)
@@ -231,6 +239,7 @@ DEPENDENCIES
   capistrano-maintenance
   ci_reporter
   coffee-rails
+  compass-rails
   configus
   factory_girl_rails
   factory_girl_sequences

@@ -24,6 +24,7 @@ group :assets do
   gem 'libv8', '~> 3.3.10'
   gem 'uglifier', '>= 1.0.3'
   gem "twitter-bootstrap-rails"
+  gem 'compass-rails'
 end
 
 gem 'jquery-rails'
