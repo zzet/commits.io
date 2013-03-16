@@ -1,16 +1,18 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many :auth_tokens
-  has_many :authorizations
-  has_many :user_badges, :dependent => :destroy
-
   attr_accessible :email, :name, :login, :image, :password, :password_confirmation
 
   validates :email, uniqueness: { case_sensitive: false }
   validates :login, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }, allow_blank: true
   validates :name, length: { maximum: 255 }
+
+  has_many :auth_tokens
+  has_many :authorizations
+  has_many :user_badges, :dependent => :destroy
+  has_many :committers
+  has_many :repositories, dependent: :nullify
 
   def guest?
     false

@@ -21,6 +21,12 @@ CommitsIO::Application.routes.draw do
 
     resource :hook, only: :create
 
+    scope :module => :users do
+      namespace :settings do
+        post :activate_repository
+      end
+    end
+
     # private
     get '/dashboard' => 'users#dashboard'
     get '/profile' => 'users#profile'

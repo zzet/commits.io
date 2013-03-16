@@ -18,18 +18,11 @@
     %br
     %table.table
       %tbody
+      - @repositories.each do |r|
         %tr
+          %td= r.name
           %td
-            zzet/commits.io
-          %td
-            
-        %tr
-          %td
-            Andrew8xx8/awesome-cropper
-          %td
-            
-        %tr
-          %td
-            zzet/commits.io
-          %td
-            
+            - unless r.id?
+              = button_to t('.activate'), settings_activate_repository_path(repository: r.name), method: :post, class: 'btn'
+            - else
+              = t('.activated')

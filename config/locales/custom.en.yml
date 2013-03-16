@@ -1,0 +1,7 @@
+en:
+  web:
+    users:
+      settings:
+        repositories:
+          activate: 'Activate'
+          activated: 'Activated'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130316205306) do
+ActiveRecord::Schema.define(:version => 20130316210929) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20130316205306) do
     t.string   "external_id"
     t.string   "external_type"
     t.boolean  "is_fork"
+    t.integer  "user_id"
   end
 
   create_table "user_auth_tokens", :force => true do |t|
