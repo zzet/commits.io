@@ -3,10 +3,14 @@ FactoryGirl.define do
     {
       :provider => 'github',
       :uid => '1234567',
+      :extra => {
+        :raw_info => {
+          login: "8xx8ru"
+        }
+      },
       :info => {
         email: "test@test.test",
         nickname: "8xx8ru",
-        login: "8xx8ru",
         name: "8xx8 [18+]",
         location:"Simbirsk",
         image:"http://a0.twimg.com/profile_images/2563494421/u0hxerpikv3rzf76vhsk_normal.jpeg",
