@@ -1,4 +1,4 @@
-class Web::Users::SettingsController < ApplicationController
+class Web::Users::SettingsController < Web::Users::ApplicationController
   def repositories
   end
 

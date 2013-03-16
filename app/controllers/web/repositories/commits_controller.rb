@@ -1,4 +1,4 @@
-class Web::Repositories::CommitsController < ApplicationController
+class Web::Repositories::CommitsController < Web::Repositories::ApplicationController
 
   def index
   end

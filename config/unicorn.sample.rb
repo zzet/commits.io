@@ -1,6 +1,6 @@
 # coding: UTF-8
 
-APP_PATH = "/rest/u/apps/commitsio"
+APP_PATH = "/u/apps/commits.io"
 
 # Sample verbose configuration file for Unicorn (not Rack)
 #

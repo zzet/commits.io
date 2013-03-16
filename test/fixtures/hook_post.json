@@ -1,0 +1,112 @@
+{
+  "after" : "b8c9070cd2c6f118f7f247064f75101714b03d08",
+  "before" : "266916d5b55d275e9a9c56e529732e2e131d4a27",
+  "commits" : [ {
+    "added" : [  ],
+    "author" : {
+      "email" : "me@zzet.org",
+      "name" : "Andrey Kumanyaev",
+      "username" : "zzet"
+    },
+    "committer" : {
+      "email" : "me@zzet.org",
+      "name" : "Andrey Kumanyaev",
+      "username" : "zzet"
+    },
+    "distinct" : true,
+    "id" : "0b25ba616b5ca2659cc9c205ed20b57f7dd6bca7",
+    "message" : "method for hook",
+    "modified" : [
+      "lib/cio/sync/repository.rb"
+    ],
+    "removed" : [  ],
+    "timestamp" : "2013-03-16T09:01:49-07:00",
+    "url" : "https://github.com/zzet/commits.io/commit/0b25ba616b5ca2659cc9c205ed20b57f7dd6bca7"
+  },
+  {
+    "added" : [
+      "app/controllers/web/hook_controller.rb",
+      "app/helpers/web/hook_helper.rb",
+      "test/functional/web/hook_controller_test.rb"
+    ],
+    "author" : {
+      "email" : "me@zzet.org",
+      "name" : "Andrey Kumanyaev",
+      "username" : "zzet"
+    },
+    "committer" : {
+      "email" : "me@zzet.org",
+      "name" : "Andrey Kumanyaev",
+      "username" : "zzet"
+    },
+    "distinct" : true,
+    "id" : "b8c9070cd2c6f118f7f247064f75101714b03d08",
+    "message" : "Add hook controller",
+    "modified" : [
+      "config/routes.rb"
+    ],
+    "removed" : [  ],
+    "timestamp" : "2013-03-16T09:01:49-07:00",
+    "url" : "https://github.com/zzet/commits.io/commit/b8c9070cd2c6f118f7f247064f75101714b03d08"
+  }
+  ],
+  "compare" : "https://github.com/zzet/commits.io/compare/266916d5b55d...b8c9070cd2c6",
+  "created" : false,
+  "deleted" : false,
+  "forced" : false,
+  "head_commit" : {
+    "added" : [
+      "app/controllers/web/hook_controller.rb",
+      "app/helpers/web/hook_helper.rb",
+      "test/functional/web/hook_controller_test.rb"
+    ],
+    "author" : {
+      "email" : "me@zzet.org",
+      "name" : "Andrey Kumanyaev",
+      "username" : "zzet"
+    },
+    "committer" : {
+      "email" : "me@zzet.org",
+      "name" : "Andrey Kumanyaev",
+      "username" : "zzet"
+    },
+    "distinct" : true,
+    "id" : "b8c9070cd2c6f118f7f247064f75101714b03d08",
+    "message" : "Add hook controller",
+    "modified" : [
+      "config/routes.rb"
+    ],
+    "removed" : [  ],
+    "timestamp" : "2013-03-16T09:01:49-07:00",
+    "url" : "https://github.com/zzet/commits.io/commit/b8c9070cd2c6f118f7f247064f75101714b03d08"
+  },
+  "pusher" : {
+    "email" : "me@zzet.org",
+    "name" : "zzet"
+  },
+  "ref" : "refs/heads/develop",
+  "repository" : {
+    "created_at" : 1363289872,
+    "description" : "",
+    "fork" : false,
+    "forks" : 0,
+    "has_downloads" : true,
+    "has_issues" : true,
+    "has_wiki" : true,
+    "id" : 8783700,
+    "language" : "Ruby",
+    "master_branch" : "master",
+    "name" : "commits.io",
+    "open_issues" : 0,
+    "owner" : {
+      "email" : "me@zzet.org",
+      "name" : "zzet"
+    },
+    "private" : true,
+    "pushed_at" : 1363449752,
+    "size" : 504,
+    "stargazers" : 0,
+    "url" : "https://github.com/zzet/commits.io",
+    "watchers" : 0
+  }
+}
