@@ -1,2 +1,8 @@
-%h1 Web::Users::Settings#personal
-%p Find me in app/views/web/users/settings/personal.html.haml
+.row-fluid
+  .span3
+    %ul.nav.nav-list
+      %li
+        =link_to t(".Settings"), settings_personal_path
+      %li
+        =link_to t(".Repositories"), settings_repositories_path
+  .span9
