@@ -11,15 +11,15 @@
           - Metric.all.each do |metric|
             %strong
               = metric.name
-            %strong
+            %span.badge.badge-success
               = number_to_percentage @user.commit_metrics.where(metric_id: metric.id).average(:percent), :precision => 1
+              \%
             %br
 
       .span6
         %h4= t(".Badges")
 
 
-.b-dots
-
 -if @user.committer
+  .b-dots
   = render 'web/shared/commits', commits: @user.committer.commits
