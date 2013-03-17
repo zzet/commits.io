@@ -11,7 +11,7 @@ class Web::Users::SettingsController < Web::Users::ApplicationController
     repository = RepositoryBuilder.build(github.repos.get(resource_user.login, params[:repository]), :github)
 
     # TODO [AK] think about this place
-    committer = resource_user.committers.first
+    committer = resource_user.committer
     repository.ownerable = committer if committer
 
     repository.user = resource_user

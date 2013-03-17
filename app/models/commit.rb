@@ -13,5 +13,6 @@ class Commit < ActiveRecord::Base
   validates :message, presence: true, length: { maximum: 255 }
   validates :committed_at, presence: true
 
-  scope :top, -> { joins(:commit_metrics).select('commits.id, SUM(commit_metrics.percent) as total_percent').group('commits.id').order('total_percent ASC') }
+  scope :bottom, -> { order(:percent).limit(10) }
+  scope :top, -> { order("percent DESC").limit(10) }
 end

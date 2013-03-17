@@ -2,6 +2,8 @@ class Web::UsersController < Web::ApplicationController
 
   def dashboard
     authenticate!
+
+    @commits = Commit.scoped
   end
 
   def profile

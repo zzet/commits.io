@@ -9,6 +9,9 @@ class CommitsService
       commit_metrics.each do |commit_metric|
         create_commit_metric(commit, commit_metric, data)
       end
+
+      commit.percent = commit.commit_metrics.average(:percent)
+      commit.save!
     end
 
     def find_or_create_committer(data)
@@ -23,7 +26,6 @@ class CommitsService
     end
 
     def create_commit(committer, data)
-      p data["message"]
       Commit.create!(
         committer_id: committer.id,
         sha: data["sha"],
