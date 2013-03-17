@@ -4,7 +4,7 @@ class Cio::Hook
       post_repo = post_data["repository"]
       repository = Repository.find_by_external_id_and_external_type(post_repo["id"], :github)
       if repository
-        repo_path = "#{ File.expand_path(Dir.pwd + "/data/repositories") }/#{post_repo["owner"]["name"]}/#{post_repo["name"]}.git"
+        repo_path = "#{ Cio::Sync::Repository.path }/#{post_repo["owner"]["name"]}/#{post_repo["name"]}.git"
         r = Grit::Repo.new(repo_path)
         commits = post_data["commits"]
         commits.each do |commit|
