@@ -15,9 +15,8 @@
               %p
                 Show that you are the best in commiting!
       .content
-        .container-fluid
-          = render :partial => 'layouts/web/shared/flash', :object => flash
-          = yield
+        = render :partial => 'layouts/web/shared/flash', :object => flash
+        = yield
       .main-footer
     .footer
       = render :partial => 'layouts/web/shared/footer'

@@ -1,2 +1,15 @@
-%h1 Web::Users::Settings#personal
-%p Find me in app/views/web/users/settings/personal.html.haml
+.row-fluid
+  .span3
+    %ul.nav.nav-list
+      %li
+        =link_to t(".Settings"), settings_personal_path
+      %li
+        =link_to t(".Repositories"), settings_repositories_path
+  .span9
+    = simple_form_for @user, html: {class: 'form-horizontal'}, url: settings_update_personal_path do |f|
+      = f.input :name
+      = f.input :email
+      = f.input :birthday, as: :string
+      .control-group
+        .controls
+          = f.button :submit, class: 'btn btn-success'

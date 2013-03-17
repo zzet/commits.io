@@ -1,0 +1,43 @@
+.row-fluid
+  .span6
+    %h2= t('.Top 10 best commits')
+    .commit-block
+      - commits.top.each do |commit|
+        .item
+          .rate= number_to_percentage commit.percent, :precision => 1
+          .subcontent
+            %a.name{:href => "#"}
+              = commit.message
+            .summary
+              .pull-left
+                %small
+                  %a.repo{:href => commit.repository.clone_url }
+                    = commit.repository.name
+                %br
+                %small
+                  %a.author{:href => ""} 
+                    = commit.committer.name
+              .pill-right.right
+                %small= commit.committed_at
+              .clearfix
+  .span6
+    %h2= t('.Top 10 worst commits')
+    .commit-block.worse
+      - commits.bottom.each do |commit|
+        .item
+          .rate=number_to_percentage commit.percent, :precision => 1
+          .subcontent
+            %a.name{:href => "#"}
+              = commit.message
+            .summary
+              .pull-left
+                %small
+                  %a.repo{:href => commit.repository.clone_url }
+                    = commit.repository.name
+                %br
+                %small
+                  %a.author{:href => ""} 
+                    = commit.committer.name
+              .pill-right.right
+                %small= commit.committed_at
+              .clearfix

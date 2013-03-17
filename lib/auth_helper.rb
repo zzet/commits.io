@@ -10,6 +10,14 @@ module AuthHelper
     session[:user_id] = user.id
   end
 
+  def save_auth_token(token)
+    session[:auth_token] = token
+  end
+
+  def get_auth_token
+    session[:auth_token]
+  end
+
   def sign_in_by_token
     if params[:auth_token]
       token = User::AuthToken.find_by_authentication_token params[:auth_token]

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130316130957) do
+ActiveRecord::Schema.define(:version => 20130317015136) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130316130957) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "percent"
   end
 
   create_table "commits", :force => true do |t|
@@ -46,6 +47,9 @@ ActiveRecord::Schema.define(:version => 20130316130957) do
     t.text     "diff"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.text     "message"
+    t.integer  "percent"
+    t.datetime "committed_at"
   end
 
   create_table "committers", :force => true do |t|
@@ -62,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20130316130957) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "kind"
   end
 
   create_table "organizations", :force => true do |t|
@@ -79,6 +84,12 @@ ActiveRecord::Schema.define(:version => 20130316130957) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.string   "source"
+    t.string   "description"
+    t.string   "clone_url"
+    t.string   "external_id"
+    t.string   "external_type"
+    t.boolean  "is_fork"
+    t.integer  "user_id"
   end
 
   create_table "user_auth_tokens", :force => true do |t|

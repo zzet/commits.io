@@ -1,5 +1,5 @@
-.row.hero
-  .span4.offset2
+.row-fluid.hero
+  .span6
     %ul.unstyled
       %li 
         %span 1
@@ -10,7 +10,7 @@
       %li 
         %span 3
         Track you repo commits
-  .span4.btn-enter-wrap
+  .span6.btn-enter-wrap
     - if signed_in?
       = link_to t('.sign_out'), session_path, method: :delete
     - else
@@ -21,3 +21,6 @@
           %br
           %span.github
             github
+
+.b-dots
+  = render 'web/shared/commits', commits: @commits

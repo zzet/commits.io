@@ -1,2 +1,26 @@
-%h1 Web::Users::Settings#repositories
-%p Find me in app/views/web/users/settings/repositories.html.haml
+.row-fluid
+  .span3
+    %ul.nav.nav-list
+      %li
+        =link_to t(".Settings"), settings_personal_path
+      %li
+        =link_to t(".Repositories"), settings_repositories_path
+  .span9
+    %h2
+      = t(".Repositories")
+      %span.pull-right
+        %i.icon-spinner.icon-spin
+        %span.btn.btn-success
+          = t(".sync")
+
+    %br
+    %table.table
+      %tbody
+      - @repositories.each do |r|
+        %tr
+          %td= r.name
+          %td.right
+            - unless r.id?
+              = link_to t('.activate'), settings_activate_repository_path(repository: r.name), method: :post
+            - else
+              = t('.activated')

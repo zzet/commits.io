@@ -3,6 +3,9 @@ FactoryGirl.define do
     {
       :provider => 'github',
       :uid => '1234567',
+      :credentials => {
+        token: '123w23534534534512312esdfw523'
+      },
       :extra => {
         :raw_info => {
           login: "8xx8ru"

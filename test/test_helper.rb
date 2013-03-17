@@ -5,13 +5,16 @@ SimpleCov.start('rails') if ENV["COVERAGE"]
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-
-Dir[Rails.root.join("test/lib/*.rb")].each {|f| require f}
+Dir[File.expand_path('../support/**/*.rb', __FILE__)].each {|f| require f}
+Dir[File.expand_path('../lib/**/*.rb', __FILE__)].each {|f| require f}
+require 'mocha/setup'
+require 'webmock/minitest'
 
 class ActiveSupport::TestCase
   include AuthHelper
   include SecureHelper
   include SocNetworkHelper
+  include TestSupport
 
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
@@ -26,3 +29,4 @@ class ActiveSupport::TestCase
 
   include FactoryGirl::Syntax::Methods
 end
+
