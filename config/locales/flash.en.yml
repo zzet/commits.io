@@ -1,0 +1,8 @@
+en:
+  flash:
+    controllers:
+      web:
+        users:
+          settings:
+            activate_repository:
+              error: 'You must register an email in order to process repos'
