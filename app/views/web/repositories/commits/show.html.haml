@@ -1,12 +1,12 @@
-%h1 Merge branch 'feature/material_and_task_in_course' into develop
+%h1= @commit.message
 
 .center
-  %h2 Metric – value
-  %h2 Metric – value
-  %h2 Metric – value
+  - @commit.commit_metrics.each do |cm|
+    %h2= number_to_percentage cm.percent, precision: 1
 
 .b-dots
 
 .center
   %a.btn.btn-success.btn-large{:href => "#"}
     %i.icon-twiiter Share this commit to twitter! 
+%br
