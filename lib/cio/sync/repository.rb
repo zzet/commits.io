@@ -1,11 +1,7 @@
 class Cio::Sync::Repository
   class << self
     def path
-      if Rails.env.to_sym == :production
-        File.expand_path(Dir.pwd + "/data/repositories")
-      else
-        File.expand_path("/var/repositories")
-      end
+      File.expand_path("/var/repositories")
     end
 
     def import(repository)
