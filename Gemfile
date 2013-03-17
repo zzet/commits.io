@@ -18,6 +18,7 @@ gem 'github_api'
 gem 'ffi-aspell'
 gem 'obscenity'
 gem 'enumerize'
+gem 'grit'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,16 +1,16 @@
 Configus.build Rails.env do
   env :production do
-    system do
+    system_param do
       repositories do
-        path Rails.root.join('data', 'repositories')
+        root_path File.expand_path(Dir.pwd + "/../../data/repositories")
       end
     end
   end
 
   env :development, parent: :production do
-    system do
+    system_param do
       repositories do
-        path Rails.root.join('data', 'repositories')
+        root_path File.expand_path(Dir.pwd + "/../../data/repositories")
       end
     end
   end
