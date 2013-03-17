@@ -1,7 +1,15 @@
 class Cio::Sync::Repository
   class << self
+    def path
+      if Rails.env.to_sym == :production
+        File.expand_path(Dir.pwd + "/data/repositories")
+      else
+        File.expand_path("/var/repositories")
+      end
+    end
+
     def import(repository)
-      cmd = "cd #{ File.expand_path(Dir.pwd + "/data/repositories") } && git clone --bare #{repository.clone_url} #{repository.user.login}/#{repository.name}.git"
+      cmd = "cd #{ path } && git clone --bare #{repository.clone_url} #{repository.user.login}/#{repository.name}.git"
       if system(cmd)
         inspect(repository)
       else
@@ -14,7 +22,7 @@ class Cio::Sync::Repository
     end
 
     def inspect(repository)
-      repo_path = File.expand_path(Dir.pwd + "/data/repositories") + "/#{repository.user.login}/#{repository.name}.git"
+      repo_path = path + "/#{repository.user.login}/#{repository.name}.git"
       repo = Grit::Repo.new(repo_path)
       repo.heads.each do |head|
         # TODO. Make batch
