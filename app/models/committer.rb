@@ -5,8 +5,8 @@ class Committer < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 255 }
 
   belongs_to :organization
-  belongs_to :user
+  has_one :user, foreign_key: :email, primary_key: :email
 
   has_many :repositories, :as => :ownerable
-  has_many :commit, :dependent => :destroy
+  has_many :commits, :dependent => :destroy
 end

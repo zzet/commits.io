@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   has_many :auth_tokens
   has_many :authorizations
   has_many :user_badges, :dependent => :destroy
-  has_many :committers
   has_many :repositories, dependent: :nullify
+  has_one :committer, foreign_key: :email, primary_key: :email
   has_many :commit_metrics
 
   def guest?
