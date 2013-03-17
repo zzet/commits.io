@@ -1,6 +1,6 @@
 class Web::RepositoriesController < ApplicationController
 
-  def commits
-
+  def show
+    @repository = Repository.find_by_name!(params[:repository])
   end
 end
