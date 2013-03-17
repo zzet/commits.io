@@ -7,6 +7,7 @@
         =link_to t(".Repositories"), settings_repositories_path
   .span9
     = simple_form_for @user, html: {class: 'form-horizontal'}, url: settings_update_personal_path do |f|
+      = f.error_notification
       = f.input :name
       = f.input :email
       = f.input :birthday, as: :string

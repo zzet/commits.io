@@ -7,6 +7,11 @@ class Web::Users::SettingsController < Web::Users::ApplicationController
   end
 
   def activate_repository
+    if resource_user.email.blank?
+      flash_error(now: false)
+      return redirect_to action: :personal
+    end
+
     github = Github.new oauth_token: get_auth_token
     repository = RepositoryBuilder.build(github.repos.get(resource_user.login, params[:repository]), :github)
 
@@ -21,16 +26,12 @@ class Web::Users::SettingsController < Web::Users::ApplicationController
   end
 
   def personal
-    @user = resource_user
+    @user = resource_user.becomes UserEditType
   end
 
   def update_personal
-    @user = resource_user
-
-    unless @user.update_attributes(params[:user])
-      flash_error
-    end
-
+    @user = resource_user.becomes UserEditType
+    @user.update_attributes(params[:user])
     render action: :personal
   end
 end
