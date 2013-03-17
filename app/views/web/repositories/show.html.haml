@@ -1,1 +1,27 @@
 %h1= @repository
+
+.b-dots
+= render 'web/shared/commits', commits: @commits
+
+.b-dots
+
+.row-fluid
+  .span6 
+    %h2= t(".Top 10 BEST committers")
+    .commit-block
+      .item
+        %a.name{:href => "#" }
+          Andrew8xx8
+      .item
+        %a.name{:href => "#" }
+          Panfilov Denis
+
+  .span6 
+    %h2= t(".Top 10 WORSE committers")
+    .commit-block
+        .item
+          %a.name{:href => "#" }
+            Andrew8xx8
+        .item
+          %a.name{:href => "#" }
+            Panfilov Denis
