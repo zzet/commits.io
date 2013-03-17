@@ -19,6 +19,7 @@ class Cio::Sync::Repository
       repo.heads.each do |head|
         # TODO. Make batch
         repo.commits(head.name, 10000).each do |commit|
+          # TODO. Search uniq commits
           data_to_metrics = {
             "source" => { },
             "author" => {
