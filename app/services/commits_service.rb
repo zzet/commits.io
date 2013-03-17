@@ -29,7 +29,8 @@ class CommitsService
         sha: data["sha"],
         parent_sha: data["parent_sha"],
         repository_id: data["repository_id"],
-        message: data["message"]
+        message: data["message"],
+        committed_at: data["timestamp"]
       )
     end
 

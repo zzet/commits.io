@@ -8,5 +8,6 @@ FactoryGirl.define do
     committer
     diff { generate(:string) }
     message { generate(:string) }
+    committed_at { Time.current }
   end
 end
