@@ -28,7 +28,8 @@ CommitsIO::Application.routes.draw do
 
     # public
     get '/profiles/:login' => 'users#profile'
-    get '/:owner/:repository' => 'repositories#show', constraints: { owner: /[a-zA-Z.\/0-9_\-]+/, repository: /[a-zA-Z.\/0-9_\-]+/ }
+    get '/:owner/:repository/commits/:sha' => 'repositories/commits#show', constraints: { owner: /[a-zA-Z.\/0-9_\-]+/, repository: /[a-zA-Z.\/0-9_\-]+/ }
     get '/:owner/:repository/commits' => 'repositories/commits#index', constraints: { owner: /[a-zA-Z.\/0-9_\-]+/, repository: /[a-zA-Z.\/0-9_\-]+/ }
+    get '/:owner/:repository' => 'repositories#show', constraints: { owner: /[a-zA-Z.\/0-9_\-]+/, repository: /[a-zA-Z.\/0-9_\-]+/ }
   end
 end

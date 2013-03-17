@@ -9,4 +9,8 @@ class Committer < ActiveRecord::Base
 
   has_many :repositories, :as => :ownerable
   has_many :commits, :dependent => :destroy
+
+  def to_s
+    name
+  end
 end

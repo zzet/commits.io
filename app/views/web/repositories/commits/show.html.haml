@@ -1,0 +1,12 @@
+%h1= @commit.message
+
+.center
+  - @commit.commit_metrics.each do |cm|
+    %h2= number_to_percentage cm.percent, precision: 1
+
+.b-dots
+
+.center
+  %a.btn.btn-success.btn-large{:href => "#"}
+    %i.icon-twiiter Share this commit to twitter! 
+%br

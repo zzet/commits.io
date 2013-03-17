@@ -10,7 +10,7 @@ class Commit < ActiveRecord::Base
   validates :repository, presence: true
   validates :sha, presence: true, length: { maximum: 255 }
   validates :parent_sha, length: { maximum: 255 }
-  validates :message, presence: true, length: { maximum: 255 }
+  validates :message, presence: true
   validates :committed_at, presence: true
 
   scope :bottom, -> { order(:percent).limit(10) }
