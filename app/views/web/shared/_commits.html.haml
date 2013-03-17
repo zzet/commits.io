@@ -18,7 +18,7 @@
                   %a.author{:href => ""} 
                     = commit.committer.name
               .pill-right.right
-                %small 16 March 2013
+                %small= commit.committed_at
               .clearfix
   .span6
     %h2= t('.Top 10 worst commits')
@@ -39,5 +39,5 @@
                   %a.author{:href => ""} 
                     = commit.committer.name
               .pill-right.right
-                %small 16 March 2013
+                %small= commit.committed_at
               .clearfix
