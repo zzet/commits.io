@@ -4,7 +4,7 @@ class Web::UsersControllerTest < ActionController::TestCase
 
   def setup
     @user = create(:user)
-    @params = { login: @user.id }
+    @params = { login: @user.login }
 
     sign_in(@user)
   end
