@@ -13,6 +13,6 @@ class Commit < ActiveRecord::Base
   validates :message, presence: true
   validates :committed_at, presence: true
 
-  scope :bottom, -> { order(:percent).limit(10) }
-  scope :top, -> { where('percent > 0').order("percent DESC").limit(10) }
+  scope :bottom, -> { order(:percent, :committed_at).limit(10) }
+  scope :top, -> { where('percent > 0').order("percent DESC, committed_at DESC").limit(10) }
 end
