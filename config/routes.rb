@@ -19,7 +19,7 @@ CommitsIO::Application.routes.draw do
     scope :module => :users do
       namespace :settings do
         get :repositories
-        get :repsonal
+        get :personal
         post :activate_repository
         put :update_personal
       end
