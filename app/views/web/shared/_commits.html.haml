@@ -6,16 +6,16 @@
         .item
           .rate= number_to_percentage commit.percent, :precision => 1
           .subcontent
-            %a.name{:href => "#"}
+            %a.name{:href => link_to_repository(commit.repository) }
               = commit.message
             .summary
               .pull-left
                 %small
-                  %a.repo{:href => commit.repository.clone_url }
+                  %a.repo{:href => link_to_commit(commit) }
                     = commit.repository.name
                 %br
                 %small
-                  %a.author{:href => ""} 
+                  %a.author{:href => link_to_user(commit.committer.email) } 
                     = commit.committer.name
               .pill-right.right
                 %small= commit.committed_at

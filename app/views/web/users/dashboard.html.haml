@@ -1,7 +1,7 @@
-- if @commits
-  .b-dots
-  = render 'web/shared/commits', commits: @commits
-- else
-  .row-fluid
+.row-fluid
+  - if @commits.any?
+    .b-dots
+      = render 'web/shared/commits', commits: @commits
+  - else
     .span12
       = link_to t('.Activate some of your repositories'), settings_repositories_path, class: 'btn btn-large btn-success'

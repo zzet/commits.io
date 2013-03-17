@@ -2,4 +2,7 @@ class Web::Repositories::CommitsController < Web::Repositories::ApplicationContr
 
   def index
   end
+
+  def show
+  end
 end

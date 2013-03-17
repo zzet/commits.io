@@ -23,5 +23,5 @@
             github
 
 .b-dots
-  - if @commits
+  - if @commits.any?
     = render 'web/shared/commits', commits: @commits
