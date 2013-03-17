@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :user_badges, :dependent => :destroy
   has_many :committers
   has_many :repositories, dependent: :nullify
+  has_many :commit_metrics
 
   def guest?
     false

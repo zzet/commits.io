@@ -8,5 +8,4 @@ class Metric < ActiveRecord::Base
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :kind, presence: true, uniqueness: { case_sensitive: false }
-
 end

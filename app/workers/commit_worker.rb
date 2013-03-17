@@ -1,5 +1,5 @@
 class CommitWorker
-  @queue = :commit
+  @queue = :commit_data
 
   def self.perform(data)
     CommitsService.add(data)

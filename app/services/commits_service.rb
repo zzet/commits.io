@@ -16,30 +16,33 @@ class CommitsService
 
       if committer.new_record?
         committer.name = data["author"]["email"]
-        committer.save
+        committer.save!
       end
 
       committer
     end
 
     def create_commit(committer, data)
-      Commit.create(
+      p data["message"]
+      Commit.create!(
         committer_id: committer.id,
         sha: data["sha"],
         parent_sha: data["parent_sha"],
-        repository_id: data["repository_id"]
+        repository_id: data["repository_id"],
+        message: data["message"]
       )
     end
 
     def create_commit_metric(commit, commit_metric, data)
-      metric = Metric.find_by_kind commit_metric[:metric] 
+      metric = Metric.find_by_kind! commit_metric[:metric] 
       user = User.find_by_email(data["author"]["email"])
 
-      CommitMetric.new(
+      CommitMetric.create!(
         metric_id: metric.id,
         commit_id: commit.id,
         data: commit_metric[:data],
-        user_id: user.try(:id)
+        user_id: user.try(:id),
+        percent: (commit_metric[:data][:rate] * 100).to_i
       )
     end
   end
