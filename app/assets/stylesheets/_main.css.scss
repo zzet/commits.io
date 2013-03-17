@@ -163,4 +163,7 @@ header {
   background-color: #f9f9f9;
   @include single-box-shadow(darken(#fff, 5%), 0, 4px, 8px, 0, inset);
   line-height: 54px;
+  p {
+    margin-bottom: 0;
+  }
 }

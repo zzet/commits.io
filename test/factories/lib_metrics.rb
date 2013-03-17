@@ -9,7 +9,9 @@ FactoryGirl.define do
         "name" => 'Author',
         "email" => 'test@test.test'
       },
-      "message" => "add dark solarized theme for code preview"
+      "message" => "add dark solarized theme for code preview",
+      "sha" => 'asdsdfgwe3qrdsfsr132dsfsdf234qsdfsdf',
+      "timestamp" => Time.current
     }
   end
 end
