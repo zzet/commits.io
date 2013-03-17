@@ -21,4 +21,15 @@ class Web::Repositories::CommitsControllerTest < ActionController::TestCase
 
     assert_response :success
   end
+
+  test "should get show" do
+    committer = create(:committer)
+    repository = committer.repositories.first
+    commit = create(:commit, repository: repository)
+
+    params = { owner: committer.to_s, repository: repository.to_s, sha: commit.sha }
+    get :show, params
+
+    assert_response :success
+  end
 end

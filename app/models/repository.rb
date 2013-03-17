@@ -9,4 +9,8 @@ class Repository < ActiveRecord::Base
 
   belongs_to :ownerable, polymorphic: true
   belongs_to :user
+
+  def to_s
+    name
+  end
 end

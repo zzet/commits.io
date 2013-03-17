@@ -7,7 +7,7 @@ module ApplicationHelper
 
   def link_to_commit(commit)
     repo = link_to_repository commit.repository
-    "#{repo}/commits/"
+    "#{repo}commits/#{commit.sha}"
   end
 
   def link_to_user(email)
