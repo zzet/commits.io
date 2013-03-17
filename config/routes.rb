@@ -1,11 +1,3 @@
-class RepositoryConstraint
-  def matches?(request)
-    (Committer.exists?(name: request.params[:owner]) || 
-     Organization.exists?(name: request.params[:owner])) && 
-      Repository.exists?(name: request.params[:repository])
-  end
-end
-
 CommitsIO::Application.routes.draw do
   # omniauth-github
   get '/auth/github/callback' => 'web/social_network#authorization'
@@ -36,7 +28,7 @@ CommitsIO::Application.routes.draw do
 
     # public
     get '/profiles/:login' => 'users#profile'
-    get '/:owner/:repository' => 'repositories#show', :constraints => RepositoryConstraint.new
-    get '/:owner/:repository/commits' => 'repositories/commits#index', :constraints => RepositoryConstraint.new
+    get '/:owner/:repository' => 'repositories#show', constraints: { owner: /[a-zA-Z.\/0-9_\-]+/, repository: /[a-zA-Z.\/0-9_\-]+/ }
+    get '/:owner/:repository/commits' => 'repositories/commits#index', constraints: { owner: /[a-zA-Z.\/0-9_\-]+/, repository: /[a-zA-Z.\/0-9_\-]+/ }
   end
 end
