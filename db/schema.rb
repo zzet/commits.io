@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130316235304) do
+ActiveRecord::Schema.define(:version => 20130317005322) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20130316235304) do
     t.text     "diff"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.string   "message"
+    t.text     "message"
   end
 
   create_table "committers", :force => true do |t|
@@ -96,13 +96,6 @@ ActiveRecord::Schema.define(:version => 20130316235304) do
     t.datetime "expired_at"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-  end
-
-  create_table "user_badges", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "badge_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

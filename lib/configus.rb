@@ -14,4 +14,7 @@ Configus.build Rails.env do
       end
     end
   end
+
+  env :test, parent: :development do
+  end
 end
