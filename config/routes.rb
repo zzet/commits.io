@@ -13,23 +13,25 @@ CommitsIO::Application.routes.draw do
 
     resource :hook, only: :create
 
+    get :profile, controller: :users, action: :profile
+    get :dashboard, controller: :users, action: :dashboard
+
     scope :module => :users do
       namespace :settings do
+        get :repositories
+        get :repsonal
         post :activate_repository
         put :update_personal
       end
     end
 
-    # private
-    get '/dashboard' => 'users#dashboard'
-    get '/profile' => 'users#profile'
-    get '/settings/repositories' => 'users/settings#repositories'
-    get '/settings/personal' => 'users/settings#personal'
-
-    # public
-    get '/profiles/:login' => 'users#profile'
-    get '/:owner/:repository/commits/:sha' => 'repositories/commits#show', constraints: { owner: /[a-zA-Z.\/0-9_\-]+/, repository: /[a-zA-Z.\/0-9_\-]+/ }
-    get '/:owner/:repository/commits' => 'repositories/commits#index', constraints: { owner: /[a-zA-Z.\/0-9_\-]+/, repository: /[a-zA-Z.\/0-9_\-]+/ }
-    get '/:owner/:repository' => 'repositories#show', constraints: { owner: /[a-zA-Z.\/0-9_\-]+/, repository: /[a-zA-Z.\/0-9_\-]+/ }
+    resources :profiles, only: [:show], controller: :users
+    resources :users, only: [], constraints: { owner: /[a-zA-Z.\/0-9_\-]+/ }, path: "/" do
+      resources :repositories, only: [:show], constraints: { repository: /[a-zA-Z.\/0-9_\-]+/ }, path: "/" do
+        scope module: :repositories do
+          resources :commits, only: [:index, :show]
+        end
+      end
+    end
   end
 end
