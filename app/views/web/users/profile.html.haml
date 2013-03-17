@@ -3,8 +3,8 @@
     %h2= @user.name
 
     .row-fluid
-      .span3
-        = image_tag @user.image
+      .span2
+        = image_tag @user.image, class: "img-polaroid"
       .span4
         %h4= t(".Summary")
         %p
@@ -15,7 +15,7 @@
               = @user.commit_metrics.where(metric_id: metric.id).average(:percent)
             %br
 
-      .span5
+      .span6
         %h4= t(".Badges")
 
 
