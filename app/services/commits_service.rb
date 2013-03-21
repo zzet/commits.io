@@ -4,14 +4,16 @@ class CommitsService
       committer = find_or_create_committer(data)
       commit = create_commit(committer, data)
 
-      commit_metrics = Metrics.get_metrics_for data
+      commit.transaction do
+        commit_metrics = Metrics.get_metrics_for data
 
-      commit_metrics.each do |commit_metric|
-        create_commit_metric(commit, commit_metric, data)
+        commit_metrics.each do |commit_metric|
+          create_commit_metric(commit, commit_metric, data)
+        end
+
+        commit.percent = commit.commit_metrics.average(:percent)
+        commit.save!
       end
-
-      commit.percent = commit.commit_metrics.average(:percent)
-      commit.save!
     end
 
     def find_or_create_committer(data)
