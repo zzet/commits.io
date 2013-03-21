@@ -1,5 +1,5 @@
 class Commit < ActiveRecord::Base
-  attr_accessible :committer_id, :diff, :parent_sha, :repository_id, :sha, :message, :committed_at
+  attr_accessible :committer_id, :diff, :parent_sha, :repository_id, :sha, :message, :committed_at, :percent
 
   has_many :commit_metrics, :dependent => :destroy
 

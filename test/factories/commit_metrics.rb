@@ -4,6 +4,7 @@ FactoryGirl.define do
     commit
     data { generate :string }
     user
-    percent { generate :integer }
+    rate { generate :float }
+    metric_count { generate :integer }
   end
 end

@@ -47,7 +47,7 @@ class CommitsService
         commit_id: commit.id,
         data: commit_metric[:data],
         user_id: user.try(:id),
-        percent: (commit_metric[:data][:rate] * 100).to_i
+        rate: commit_metric[:data][:rate]
       )
     end
   end
