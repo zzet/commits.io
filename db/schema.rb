@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130317015136) do
+ActiveRecord::Schema.define(:version => 20130321154119) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -34,9 +34,11 @@ ActiveRecord::Schema.define(:version => 20130317015136) do
     t.integer  "commit_id"
     t.string   "data"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "percent"
+    t.integer  "metric_count"
+    t.float    "rate"
   end
 
   create_table "commits", :force => true do |t|
