@@ -9,5 +9,6 @@ FactoryGirl.define do
     diff { generate(:string) }
     message { generate(:string) }
     committed_at { Time.current }
+    percent { generate :integer }
   end
 end

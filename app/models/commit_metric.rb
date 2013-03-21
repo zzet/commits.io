@@ -1,6 +1,5 @@
 class CommitMetric < ActiveRecord::Base
-  attr_accessible :commit_id, :data, :metric_id, :user_id, :percent
-
+  attr_accessible :commit_id, :data, :metric_id, :user_id, :rate, :metric_coumt
   belongs_to :metric
   belongs_to :commit
   belongs_to :user
