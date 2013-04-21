@@ -14,6 +14,7 @@ gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'state_machine'
 gem 'resque'
 gem 'resque-scheduler'
+gem 'foreman'
 gem 'github_api'
 gem 'ffi-aspell'
 gem 'obscenity'
@@ -44,6 +45,8 @@ group :development do
   gem 'rvm-capistrano', '1.2.7'
   gem 'capistrano-ext'
   gem 'capistrano-maintenance'
+  gem 'pry'
+  gem 'pry-debugger'
 end
 
 group :production do
